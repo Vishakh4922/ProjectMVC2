@@ -1,0 +1,36 @@
+﻿@model ProjectMVC2.Models.LoginCls
+@{
+    ViewBag.Title = "LoginLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login Here</h2>
+<div>
+    @using (Html.BeginForm("LoginClick", "LogIn", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+
+
+        <div>
+            <label>Username </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Luname)
+            @Html.ValidationMessageFor(m => m.Luname)
+        </div>
+
+        <div>
+            <label>Password </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Lpassword)
+            @Html.ValidationMessageFor(m => m.Lpassword)
+        </div>
+
+        <div>
+            <input type="submit" value="Login" />
+            @Html.DisplayFor(m => m.Lmsg)
+        </div>
+    }
+</div>
+

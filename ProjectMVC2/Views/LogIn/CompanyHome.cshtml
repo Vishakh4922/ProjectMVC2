@@ -1,0 +1,51 @@
+﻿@model ProjectMVC2.Models.JobInsert
+@{
+    ViewBag.Title = "CompanyHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CompanyHome</h2>
+<div>
+    @using (Html.BeginForm("JobClick", "JobIn", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+    {
+        <div>
+            <label>Job Title:</label>
+            @Html.TextBoxFor(m => m.Jtitle)
+        </div>
+
+        <div>
+            <label>Experience:</label>
+            @Html.TextBoxFor(m => m.Jexperience)
+        </div>
+
+        <div>
+            <label>Skill:</label>
+            @Html.TextBoxFor(m => m.Jskill)
+        </div>
+
+        <div>
+            <label>Vacancy:</label>
+            @Html.TextBoxFor(m => m.Jvacancy)
+        </div>
+
+        <div>
+            <label>Date:</label>
+            @*@Html.TextBoxFor(m => m.date, new { @type = "date" })*@
+            @Html.TextBoxFor(m=>m.Jdate)
+        </div>
+
+        <div>
+            <input type="submit" value="Add Job" />
+        </div>
+
+        <div>
+            @Html.DisplayFor(m => m.Jmsg)
+        </div>
+        <div>
+            @Html.ActionLink("Back To Login", "LoginLoad", "LogIn")
+        </div>
+    }
+
+</div>
+

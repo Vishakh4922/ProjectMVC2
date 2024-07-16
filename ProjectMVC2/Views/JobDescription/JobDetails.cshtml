@@ -1,0 +1,64 @@
+﻿@model ProjectMVC2.Models.JobDetailsCls
+
+    @{
+        ViewBag.Title = "JobDetails";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Job Details</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-info">
+            @ViewBag.Message
+        </div>
+    }
+
+    <div>
+        @using (Html.BeginForm("ApplyClick", "JobDescription", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <table class="table">
+                <tr>
+                    <td>Job ID:</td>
+                    <td>@Model.Jobid</td>
+                </tr>
+                <tr>
+                    <td>Company ID:</td>
+                    <td>@Model.Company_id</td>
+                </tr>
+                <tr>
+                    <td>Skills:</td>
+                    <td>@Model.Jsskills</td>
+                </tr>
+                <tr>
+                    <td>Experience:</td>
+                    <td>@Model.Jsexperience</td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>@Model.JobLocation</td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td>@Model.Jobstatus</td>
+                </tr>
+                <tr>
+                    <td>Last Date:</td>
+                    <td>@Model.Lastdate</td>
+                </tr>
+                <tr>
+                    <td>CV Upload:</td>
+                    <td>@Html.TextBox("file", "", new { Type = "file" })</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Apply Now" class="btn btn-primary" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to Job Search", "SearchLoad", "JobSearch", new { area = "" }, new { @class = "btn btn-primary" })
+    </div>

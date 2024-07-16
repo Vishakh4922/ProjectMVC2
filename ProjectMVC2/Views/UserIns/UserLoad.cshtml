@@ -1,0 +1,139 @@
+﻿@model ProjectMVC2.Models.UserInsert
+@{
+    ViewBag.Title = "UserLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User Registration</h2>
+<div>
+    @using (Html.BeginForm("UserClick", "UserIns", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+
+        <div>
+            <label>Name: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+
+        <div>
+            <label>Age: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Age)
+            @Html.ValidationMessageFor(m => m.Age)
+        </div>
+
+
+        <div>
+            <label>Address: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Address)
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+
+
+        <div>
+            <label>Phone: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Phone)
+            @Html.ValidationMessageFor(m => m.Phone)
+        </div>
+
+
+
+        <div>
+            <label>Email: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+
+
+
+        <div>
+            <label>Qualification: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Qualification)
+
+        </div>
+
+
+        <div>
+            <label>Experience: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Experience)
+
+        </div>
+
+
+
+        <div>
+            <label>Skills: </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Skill)
+
+        </div>
+
+
+
+        <div>
+            <label>Photo: </label>
+        </div>
+        <div>
+            @Html.TextBox("file1", "", new { Type = "file" })
+        </div>
+
+
+
+        <div>
+            <label>Resume: </label>
+        </div>
+        <div>
+            @Html.TextBox("file2", "", new { Type = "file" })
+        </div>
+
+
+        <div>
+            <label>Username </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Uusername)
+            @Html.ValidationMessageFor(m => m.Uusername)
+        </div>
+
+        <div>
+            <label>Password </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Upassword)
+            @Html.ValidationMessageFor(m => m.Upassword)
+        </div>
+
+        <div>
+            <label> Confirm Password </label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Uconfirmpassword)
+            @Html.ValidationMessageFor(m => m.Uconfirmpassword)
+        </div>
+
+        <div>
+            <input type="submit" value="Register" />
+            @Html.DisplayFor(m => m.UMsg)
+        </div>
+
+
+    }
+</div>
+    
+
